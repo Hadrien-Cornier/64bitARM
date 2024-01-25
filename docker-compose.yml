@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: "3"
+services:
+    linux:
+        image: linux-image
+        container_name: linux-container
+        build:
+            context: .
+        command: sleep 1000
+        volumes:
+            - .:/code
