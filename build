@@ -1,0 +1,2 @@
+as -o HelloWorld.o HelloWorld.s --64
+ld -o HelloWorld HelloWorld.o

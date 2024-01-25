@@ -2,12 +2,12 @@
 // X8 - Linux function number
 
 
-.global_start
-_start : mov    X0, #1              // 1=Stdout
-         ldr    X1, =helloworld     // string to print
-         mov    X2, #13             // length of the string
-         mov    X8, #64             // Call Linux to output the string
-
+.global _start
+_start: mov    X0, #1              // 1=Stdout
+	ldr    X1, =helloworld     // string to print
+ 	mov    X2, #13             // length of the string
+      	mov    X8, #64             // Linux write system call
+	svc    0		   // Call Linux to output the string
 // Setup the parametesr to exit the program
 // and then call Linux to do it
 
@@ -16,4 +16,5 @@ _start : mov    X0, #1              // 1=Stdout
          svc    0                   // Call Linux to terminate
 
 .data
-hellowworld: .ascii "Hello World\n"
+helloworld: .ascii "Hello World\n"
+
